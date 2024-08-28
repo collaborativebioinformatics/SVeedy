@@ -1,8 +1,8 @@
 # SVeedy
 # Contributors: 
 1. Jon Moller 
-2. Sam Stroupe
-3. Sarah Fross
+2. Sam Stroupe (Texas A&M University)
+3. Sarah Fross (Texas A&M University)
 4. Pankhuri Wanjari
 5. Nha Van Huynh
 6. Ali Saadat
