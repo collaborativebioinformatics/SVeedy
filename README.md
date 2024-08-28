@@ -1,5 +1,5 @@
 # SVeedy
-#Contributors: 
+# Contributors: 
 1. Jon Moller
 2. Sam Stroupe
 3. Sarah Fross
