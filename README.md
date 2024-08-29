@@ -11,7 +11,15 @@
 
 ## Overview
 Structural variants (SVs) represent deviations from a reference genome sequence, typically spanning more than 50 base pairs (bps). These variations can have significant implications for understanding genetic diversity and the mechanisms underlying various phenotypes. This project aims to develop a robust pipeline for detecting and cataloging identical SVs across different samples and databases, ultimately linking them to specific phenotypes.
-
+# Structural Variants in Human Genomes
+![image](https://github.com/user-attachments/assets/e8a32170-29e0-4fdd-8700-28db0f4be256)
+Larger structural variants are present among human genomes. For example, human chromosomes can have:
+- **Missing segments** (*deletion variants*)
+- **Duplicated segments** (*duplication variants*)
+- **Inverted segments** (*inversion variants*)
+- **Added segments** (*insertion variants*)
+- **Segments transferred from other chromosomes** (*translocation variants*)
+*Source: [NIH Human Genomic Fact Sheet](https://www.genome.gov/about-genomics/fact-sheets/Genomic-Research) (Last updated: February 1, 2023)*
 ## Objectives
 The primary goal of this study is to identify and analyze SVs in novel and known genes, as well as established population SVs, to uncover new biological processes and associations. By cross-referencing SVs with phenotypic data, this pipeline seeks to establish a more comprehensive understanding of genotype-phenotype correlations.
 
