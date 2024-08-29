@@ -19,6 +19,7 @@ Larger structural variants are present among human genomes. For example, human c
 - **Inverted segments** (*inversion variants*)
 - **Added segments** (*insertion variants*)
 - **Segments transferred from other chromosomes** (*translocation variants*)
+
 *Source: [NIH Human Genomic Fact Sheet](https://www.genome.gov/about-genomics/fact-sheets/Genomic-Research) (Last updated: February 1, 2023)*
 ## Objectives
 The primary goal of this study is to identify and analyze SVs in novel and known genes, as well as established population SVs, to uncover new biological processes and associations. By cross-referencing SVs with phenotypic data, this pipeline seeks to establish a more comprehensive understanding of genotype-phenotype correlations.
