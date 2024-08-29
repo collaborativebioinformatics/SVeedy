@@ -24,5 +24,7 @@ The primary goal of this study is to identify and analyze SVs in novel and known
 As an example, a previous study identified 11 SV loci associated with an increased risk for obesity, with an Odds Ratio exceeding 25% ([DOI: 10.1371/journal.pone.0058048](https://doi.org/10.1371/journal.pone.0058048)). This project aims to build upon such findings by extending the analysis to a broader set of SVs and phenotypes, facilitating the discovery of novel genetic contributors to complex traits.
 
 # Workflow
-![image](https://github.com/user-attachments/assets/ea484571-3640-42b6-acdc-3926434a07ae)
+![SVeedy - Wed](https://github.com/user-attachments/assets/54dfa671-0fee-4056-91d5-cfdfa21c287e)
+
+![SVeedy - Thurs](https://github.com/user-attachments/assets/1a8c374a-6b2a-42e5-b3c1-886b537fe97c)
 
