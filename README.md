@@ -6,8 +6,6 @@
 4. Shaghayegh Beheshti (Baylor College of Medicine)
 5. Pankhuri Wanjari (University of Chicago- Department of Pathology)
 6. Nha Van Huynh (University of Alabama at Birmingham)
-7. Ali Saadat
-
 ![image](https://github.com/user-attachments/assets/5bf7b126-30c8-48cd-8d2f-f0049b398b5e)
 # Structural Variant Analysis Pipeline
 
