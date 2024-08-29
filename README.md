@@ -28,3 +28,7 @@ As an example, a previous study identified 11 SV loci associated with an increas
 
 ![SVeedy - Thurs](https://github.com/user-attachments/assets/1a8c374a-6b2a-42e5-b3c1-886b537fe97c)
 
+# Demographic features of the study population 
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/206c3939-ada4-445c-ac75-cf93471ebab9">
+<img width="467" alt="image" src="https://github.com/user-attachments/assets/4f470f03-b84c-49cc-bba4-001bc855eff8">
+
