@@ -2,7 +2,7 @@
 
 # Read tsv file
 Chr03 <- read.table(file='adotto_variants.grch38.sqoff.chr3.above50bp.truvari_collapsed_oc_ready.vcf.tsv', skip = 6, sep = '\t', header =  FALSE, fill = TRUE)
-header <- read.table(file='adotto_variants.grch38.sqoff.chr1.above50bp.truvari_collapsed_oc_ready.vcf.tsv', sep = '\t', skip = 2, nrows =1,header =  TRUE, fill = TRUE)
+header <- read.table(file='adotto_variants.grch38.sqoff.chr3.above50bp.truvari_collapsed_oc_ready.vcf.tsv', sep = '\t', skip = 2, nrows =1,header =  TRUE, fill = TRUE)
 colnames(Chr03) <- unlist(header)
 
 # Count clinical significant variants
