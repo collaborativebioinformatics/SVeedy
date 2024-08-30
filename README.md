@@ -25,21 +25,29 @@ Larger structural variants are present among human genomes. For example, human c
 We gained access to a collection of VCFs created to find Tandem Repeats (TRs) (English et. al 2024)  from a collection of 86 haplotypes accumulated from Garg et. al 2020, Ebert et. al 2021, Jarvis et. al 2022, and Wang et. al 2022.
 
 Then, we converted these BCF files to VCF files:
+
 `bcftools convert -O v -o file.vcf file.bcf.gz`
+
 # filter out SVs under 50 bp
+
 `bcftools view -i "SVLEN > 50" file.vcf -o above50bp.vcf`
 
 One thing we need to consider is the cutoff percentage of similarity of the SVs. For example, if obesity has been identified to have a 100bp SV compared to the population reference, we would want to determine if 80 out of the 100 bps (80%) are the same. This is one of the goals of the Truvari software (English et. al 2022) and they explain that although a similar SV may be present in different samples, it can be in different loci along the genome. They also explain that over-filtering using the collapse command may remove regions of the SV. We also need to be wary of defining the range of each SV and whether we will add, for example, a buffer of 5bp on either side of a SV to take unique alleles into account.
 
 By using the Truvari software, we were able to collapse the SVs:
+
 `truvari collapse -k common -i above50bp.vcf.gz -o truvari_raw.vcf -c truvari_collapsed.vcf`
 
 At this point, we could run SURVIVOR 1.0.7 ([DOI: doi:10.12688/f1000research.12516.1] (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5668921/)) for analyzing the VCF data:
+
 `SURVIVOR stats file.vcf -1 -1 -1 survivor_stats`
 
 Finally, we used OpenCRAVAT (Pagal et. al 2019) to annotate the VCF file using the ClinVar and gnomAD databases and hg38 genome reference. We removed a problematic line of the VCF header (FILTER/COV) before running the input collapsed SV VCF through open-cravat.
+
 `oc run above50bp.truvari_collapsed_oc_ready.vcf -l hg38 -a gnomad clinvar -t text excel -d opencravat_output --debug`
+
 We also added in cosmic, gnomad_gene, clinvar_acmg annotators
+
 `oc run above50bp.truvari_collapsed_oc_ready.vcf -l hg38 -a gnomad gnomad_gene clinvar clinvar_acmg cosmic cosmic_gene -t text excel -d opencravat_output2 --debug`
 
 ## Case Study
