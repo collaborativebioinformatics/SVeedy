@@ -60,6 +60,28 @@ In our analysis of chromosome 1 using the Adotto dataset, we identified genes wi
 For example, the gene **NFASC**, which is involved in neurodevelopmental disorders with central and peripheral motor dysfunction (MIM 609145), shows notable structural variants in the East Asian ancestry. The prevalence of structural variants of NFASC in this population underscores the importance of understanding population-specific genetic variations, which can inform physicians and researchers about potential genetic risk factors and guide future studies. Our tool with continued research into these population-specific variants is essential for advancing personalized medicine and improving genetic counseling.
 ![image](https://github.com/user-attachments/assets/fc0d8dc3-c494-4992-af07-9e5c413db348)
 
+# Annotating SVs with ClinVar Annotations
+
+We have successfully validated our pipeline by gathering all structural variants (SVs) from the Adotto database and combining them with ClinVar data. This analysis led to the identification of **three structural variants** classified as pathogenic in ClinVar, affecting a total of **eight individuals** across the dataset.
+
+The figure below illustrates the results of our analysis, including a table that provides detailed information about the identified pathogenic structural variants:
+
+- **ClinVar ID**: The unique identifier for each variant in the ClinVar database.
+- **Disease Name**: The associated disease or condition, along with corresponding Human Phenotype Ontology (HPO) terms.
+- **Clinical Significance**: The clinical classification of the variant, which in this analysis, is labeled as pathogenic.
+![image](https://github.com/user-attachments/assets/d6fa1ce4-e1d1-4753-b615-6014300cc735)
+
+This table serves as a reference for the identified structural variants and their clinical implications, based on the combined analysis of the Adotto database and ClinVar data.
+
+## User-Friendly Tool for PDF Generation
+
+To facilitate the use of this information, we have developed an additional tool that converts the data into a user-friendly PDF output. This PDF includes the sample name of each individual and the predicted diagnosis based on the known ClinVar phenotypes. It provides a comprehensive report detailing each variant, including all relevant information.
+
+An example of this PDF report is shown below:
+
+![image](https://github.com/user-attachments/assets/e7d56956-101c-4171-97cc-5bf589d7fcaa)
+
+This tool streamlines the interpretation of SV data and enhances the ease of accessing detailed diagnostic information, making it an invaluable resource for clinical research and patient care.
 
 # Future Directions and Conclusion
 
