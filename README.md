@@ -54,7 +54,6 @@ As an example, a previous study identified 11 SV loci associated with an increas
 
 # Workflow
 
-**Final Iteration**
 ![pankhuri's flowchart](https://github.com/user-attachments/assets/cc6ce172-667b-4663-9873-e2f257e02470)
 
 # Validation
