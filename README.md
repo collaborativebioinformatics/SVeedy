@@ -49,6 +49,7 @@ As an example, a previous study identified 11 SV loci associated with an increas
 
 ![SVeedy - Fri](https://github.com/user-attachments/assets/68e8a3c2-73af-4aa8-9755-7bbc30abb8ee)
 
+![pankhuri's flowchart](https://github.com/user-attachments/assets/cc6ce172-667b-4663-9873-e2f257e02470)
 
 # Validation
 
