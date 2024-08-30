@@ -29,8 +29,20 @@ The primary goal of this study is to identify and analyze SVs in novel and known
 - **Phenotype Association:** Each identified SV will be linked to phenotypic data, allowing for the correlation of specific genetic variations with particular traits or diseases.
 - **VCF File Output:** The results will be condensed into a variant calling format (VCF) file, summarizing the detected SVs and their associated phenotypes. Users can then input a patient ID to retrieve potential phenotypic outcomes based on the identified SVs.
 
+- We gained access to a collection of VCFs created to find Tandem Repeats (TRs) (English et. al 2024)  from a collection of 86 haplotypes accumulated from Garg et. al 2020, Ebert et. al 2021, Jarvis et. al 2022, and Wang et. al 2022.
+
+- One thing we need to consider is the cutoff percentage of similarity of the SVs. For example, if obesity has been identified to have a 100bp SV compared to the population reference, we would want to determine if 80 out of the 100 bps (80%) are the same. This is one of the goals of the Truvari software (English et. al 2022) and they explain that although a similar SV may be present in different samples, it can be in different loci along the genome. They also explain that over-filtering using the collapse command may remove regions of the SV. We also need to be wary of defining the range of each SV and whether we will add, for example, a buffer of 5bp on either side of a SV to take unique alleles into account.
+
+- Next, we used MyVariant.info (or R package ‘myvariant’) (Yao et. al 2023) to identify SVs with an associated phenotype.
+- *Issues: We ran into issues with MyVarinat using the HGVS naming convention which includes the sequence. So, for large insertions, the HGVS name string was too large to function properly.
+ Instead we are using OpenCRAVAT (Pagal et. al 2019) to annotate the VCF file using the ClinVar and gnomAD databases and hg38 genome reference. We removed a problematic line of the VCF header (FILTER/COV) before running the input collapsed SV VCF through open-cravat.
+
+Next, the plan is to import the annotated VCF file into R using vcfR (Knaus and Grunwald 2016). Then identify the variants with a phenotype according to the annotation (should be recorded in the ‘INFO’ field of the VCF file). Once those variants are flagged we can look for individuals that have an alternate allele at that site using the ‘GT’ (genotype) field. With that information, we can put together a datatable with individuals and their associated phenotype. Then we can generate per sample reports of all phenotypes associated with their genotypes
+
+
 ## Case Study
 As an example, a previous study identified 11 SV loci associated with an increased risk for obesity, with an Odds Ratio exceeding 25% ([DOI: 10.1371/journal.pone.0058048](https://doi.org/10.1371/journal.pone.0058048)). This project aims to build upon such findings by extending the analysis to a broader set of SVs and phenotypes, facilitating the discovery of novel genetic contributors to complex traits.
+
 
 # Workflow
 ![SVeedy - Wed](https://github.com/user-attachments/assets/54dfa671-0fee-4056-91d5-cfdfa21c287e)
