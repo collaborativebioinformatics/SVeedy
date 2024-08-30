@@ -35,9 +35,6 @@ As an example, a previous study identified 11 SV loci associated with an increas
 
 
 # Workflow
-![SVeedy - Wed](https://github.com/user-attachments/assets/54dfa671-0fee-4056-91d5-cfdfa21c287e)
-
-![SVeedy - Fri](https://github.com/user-attachments/assets/68e8a3c2-73af-4aa8-9755-7bbc30abb8ee)
 
 **Final Iteration**
 ![pankhuri's flowchart](https://github.com/user-attachments/assets/cc6ce172-667b-4663-9873-e2f257e02470)
@@ -59,6 +56,9 @@ In our analysis of chromosome 1 using the Adotto dataset, we identified genes wi
 
 For example, the gene **NFASC**, which is involved in neurodevelopmental disorders with central and peripheral motor dysfunction (MIM 609145), shows notable structural variants in the East Asian ancestry. The prevalence of structural variants of NFASC in this population underscores the importance of understanding population-specific genetic variations, which can inform physicians and researchers about potential genetic risk factors and guide future studies. Our tool with continued research into these population-specific variants is essential for advancing personalized medicine and improving genetic counseling.
 ![image](https://github.com/user-attachments/assets/fc0d8dc3-c494-4992-af07-9e5c413db348)
+
+![10_coding_chr1](https://github.com/user-attachments/assets/0448ad38-1404-44f6-9e0b-26bc37f2dd37)
+
 
 # Annotating SVs with ClinVar Annotations
 
