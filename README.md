@@ -86,7 +86,7 @@ We have successfully validated our pipeline by gathering all structural variants
 
 
 The figure below illustrates the results of our analysis, including a table that provides detailed information about the identified pathogenic structural variants:
-<img width="900" alt="AllClinVarHits" src="https://github.com/user-attachments/assets/3bb25389-9bbf-4c2c-97a5-4aee9dec4624">
+<img width="900" alt="ClinVarHits" src="https://github.com/user-attachments/assets/1e51d7d3-f831-4e1e-8ee6-0e9b74e8d6c7">
 
 - **ClinVar ID**: The unique identifier for each variant in the ClinVar database.
 - **Disease Name**: The associated disease or condition, along with corresponding Human Phenotype Ontology (HPO) terms.
