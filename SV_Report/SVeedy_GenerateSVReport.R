@@ -4,18 +4,43 @@ library(argparse)   ## v2.2.3
 
 
 parser <- ArgumentParser()
-parser$add_argument("-t", "--tsv", help="OpenCRAVAT report tsv output")
+parser$add_argument("-t", "--tsv", action = "append",
+                    help="OpenCRAVAT report tsv file", required = TRUE)
 args <- parser$parse_args()
 
 
-
 ##### Read in the OpenCRAVAT tsv report and skip the header lines #####
-report <- read.delim(args$tsv, skip = 5)
-#report <- read.delim("CravatReportTest.tsv", skip = 5)
+# store it as data frames in a list
+#report <- read.delim(args$tsv, skip = 5)
+# report1 <- read.delim("adotto_chr1.tsv", skip = 5)
+# report2 <- read.delim("adotto_chr2.tsv", skip = 5)
+# report3 <- read.delim("adotto_chr3.tsv", skip = 5)
+# list <- c("adotto_chr1.tsv","adotto_chr2.tsv","adotto_chr3.tsv")
+
+# Initialize an empty list to store all of the tsv files
+data <- list()
+for (file in args$tsv) {
+  report <- read.delim(file, skip = 5)
+  data[[length(data) + 1]] <- report
+}
+# for (file in list) {
+#   report <- read.delim(file, skip = 5)
+#   data[[length(data) + 1]] <- report
+# }
+
+# Merge all data frames into one report
+report <- do.call(rbind, data)
+
+###### Analyze the data ############
+# Make plots on general trends of the data
+## GET CODE FROM GROUP ##
+
+
+##### Identify Variants of Clinical interest in the data base ##
 
 # Keep only the variants that have a known clinical significance
 disease_associated <- report %>%
-  filter(Clinical.Significance %in% c('pathogenic', 'likely pathogenic')) %>%
+  filter(Clinical.Significance %in% c('Pathogenic', 'Likely Pathogenic', 'VUS')) %>%
   separate_rows(Samples, sep = ";")
 
 # Group by Sample and summarize the associated variants
@@ -40,7 +65,7 @@ for (i in 1:nrow(variants_per_sample)) {
   # Write a title to the new page
   title(main = paste("Genetic Report for Sample", sample_id))
   
-  # Set margins
+  # Set margins for graphs if needed
   #par(mar = c(4, 4, 4, 4))
   
   # Set initial y position for text
@@ -57,8 +82,8 @@ for (i in 1:nrow(variants_per_sample)) {
   # Example paragraph that can be written into a generated report that
     # inserts information taken from the OpenCRAVAT report 
      paragraph <- strwrap(paste(
-      "Sample ", sample_id, " likely has ", variant$Disease.Names,
-      " due to the identified structural variant at the genomic coordinate ", variant$Chrom,
+      "Sample ", sample_id, " is at risk for ", variant$Disease.Names,
+      " due to an identified structural variant at the genomic coordinate ", variant$Chrom,
       ":", variant$Position, ". The identified structural variant 
       in the genome of this individual is ",
       variant$Clinical.Significance, " based on previous research. 
