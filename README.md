@@ -49,4 +49,11 @@ Above: Raw SV counts after filtering (>50 bp SVs) and merging (truvari collapse)
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/206c3939-ada4-445c-ac75-cf93471ebab9">
 <img width="467" alt="image" src="https://github.com/user-attachments/assets/4f470f03-b84c-49cc-bba4-001bc855eff8">
 
+## Gene Analysis of Chromosome 1
+
+In our analysis of chromosome 1 using the Adotto dataset, we identified genes with the most prevalent allele frequencies across different populations. These allele frequencies, including those for structural variants, were sourced from the gnomAD dataset. This analysis highlights genes that show significant variation in allele frequencies among American, Ashkenazi Jewish, East Asian, Finnish, Non-Fin European, and Other populations.
+
+For example, the gene **NFASC**, which is involved in neurodevelopmental disorders with central and peripheral motor dysfunction (MIM 609145), shows notable structural variants in the East Asian ancestry. The prevalence of structural variants of NFASC in this population underscores the importance of understanding population-specific genetic variations, which can inform physicians and researchers about potential genetic risk factors and guide future studies. Our tool with continued research into these population-specific variants is essential for advancing personalized medicine and improving genetic counseling.
+![image](https://github.com/user-attachments/assets/fc0d8dc3-c494-4992-af07-9e5c413db348)
+
 
