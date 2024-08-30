@@ -56,4 +56,5 @@ In our analysis of chromosome 1 using the Adotto dataset, we identified genes wi
 For example, the gene **NFASC**, which is involved in neurodevelopmental disorders with central and peripheral motor dysfunction (MIM 609145), shows notable structural variants in the East Asian ancestry. The prevalence of structural variants of NFASC in this population underscores the importance of understanding population-specific genetic variations, which can inform physicians and researchers about potential genetic risk factors and guide future studies. Our tool with continued research into these population-specific variants is essential for advancing personalized medicine and improving genetic counseling.
 ![image](https://github.com/user-attachments/assets/fc0d8dc3-c494-4992-af07-9e5c413db348)
 
+## Conclusion and Future Directions
 
