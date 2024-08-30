@@ -63,6 +63,9 @@ We are validating our pipeline on the Project Adotto assembly-based variant call
 ![image](https://github.com/user-attachments/assets/5ec8c25c-7c7d-412d-a323-93d087d679e3)
 Above: Raw SV counts after filtering (>50 bp SVs) and merging (truvari collapse) steps of pipeline for Project Adotto chromosome 1 variants.
 
+![ins_del](https://github.com/user-attachments/assets/74028729-f36b-40f8-a200-a7f8422a83d8)
+
+
 # Demographic features of the study population 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/206c3939-ada4-445c-ac75-cf93471ebab9">
 <img width="467" alt="image" src="https://github.com/user-attachments/assets/4f470f03-b84c-49cc-bba4-001bc855eff8">
