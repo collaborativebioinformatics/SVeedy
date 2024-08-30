@@ -58,8 +58,8 @@ for (i in 1:nrow(variants_per_sample)) {
     # inserts information taken from the OpenCRAVAT report 
      paragraph <- strwrap(paste(
       "Sample ", sample_id, " likely has ", variant$Disease.Names,
-      " due to the identified structural variant on ", variant$Chrom,
-      " at position ", variant$Position, ". The identified structural variant 
+      " due to the identified structural variant at the genomic coordinate ", variant$Chrom,
+      ":", variant$Position, ". The identified structural variant 
       in the genome of this individual is ",
       variant$Clinical.Significance, " based on previous research. 
       More information about this genetic variant can be found in the 
@@ -74,7 +74,7 @@ for (i in 1:nrow(variants_per_sample)) {
         y_position <- 1
       }
       # 
-      text(x = 0, y = y_position, labels = line, pos = 4, cex = 1)
+      text(x = 0, y = y_position, labels = line, pos = 4, cex = 0.8)
       y_position <- y_position - line_height
     }
   }
