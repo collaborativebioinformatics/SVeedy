@@ -1,5 +1,5 @@
 #vvvvvvvvv with tsv
-title <- "addoto_variants.grch38.sqoff.chr3.above50bp.truvari_collapsed_oc_ready.vcf.tsv"
+title <- "adotto_variants.grch38.sqoff.chr1.above50bp.truvari_collapsed_oc_ready.vcf.tsv"
 tsv_file <- read.csv(title,sep="\t",skip=5)
 
 # Use All Mappings column for gene name; between first and second :
@@ -23,27 +23,20 @@ noncoding <- data.frame(name=vcf_file$Gene,value=vcf_file$`Number of Noncoding V
 result <- variant_file %>% 
   filter(Gene>0)
 
-
-num_Genes %>% tally(list(result$Gene))
-
-all_AF <- list(variant_file$AC/variant_file$AN)
-
+x <- result$Gene
+y <- result$AC/result$AN
 
 #install.packages("ggplot2")
 library(ggplot2)
 library(dplyr)
 
-test_data <- aes(x=excel_AF_Gene,y=all_AF)
-test_graph <- ggplot(excel_AF_Gene, test_data)+geom_violin(aes(colour="#1268FF"),alpha=0.3)
+test_data <- aes(x=x,y=y)
+test_graph <- ggplot(x, test_data)+geom_violin(aes(colour="#1268FF"),alpha=0.3)
 print(test_graph)
 
 new_coding <- aes(x=reorder(Genes,-Number_of_Variants),y=Number_of_Variants)
 
 coding_graph <- ggplot(head(coding,10), new_coding)+geom_bar(stat='identity')+
-  xlab("") + ylab("Number of Variants")+ ggtitle("Top 10 Coding Variants in Genes")
+  xlab("") + ylab("Number of Variants")+ ggtitle("Top 10 Coding Variants in Genes for Chr1")
 
 print(coding_graph)
-
-
-
-
