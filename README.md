@@ -1,5 +1,5 @@
 # SVeedy
-![image](https://github.com/user-attachments/assets/5bf7b126-30c8-48cd-8d2f-f0049b398b5e | width=100)
+![image](https://github.com/user-attachments/assets/5bf7b126-30c8-48cd-8d2f-f0049b398b5e)
 
 # Structural Variant Analysis Pipeline
 
