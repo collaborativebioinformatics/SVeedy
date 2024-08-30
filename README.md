@@ -56,5 +56,19 @@ In our analysis of chromosome 1 using the Adotto dataset, we identified genes wi
 For example, the gene **NFASC**, which is involved in neurodevelopmental disorders with central and peripheral motor dysfunction (MIM 609145), shows notable structural variants in the East Asian ancestry. The prevalence of structural variants of NFASC in this population underscores the importance of understanding population-specific genetic variations, which can inform physicians and researchers about potential genetic risk factors and guide future studies. Our tool with continued research into these population-specific variants is essential for advancing personalized medicine and improving genetic counseling.
 ![image](https://github.com/user-attachments/assets/fc0d8dc3-c494-4992-af07-9e5c413db348)
 
-# Conclusion and Future Directions
+# Future Directions and Conclusion
+
+**Future Directions:**
+
+- **Enhanced Integration**: Expand the pipeline by incorporating additional databases and resources to improve the breadth and depth of structural variant (SV) annotations.
+
+- **Binder Implementation**: Integrate the entire workflow into a Binder environment for increased accessibility and reproducibility of analyses.
+
+- **Streamlining and Optimization**: Focus on streamlining the pipeline to ensure faster and more efficient processing of SV data, including optimizing data flow and reducing computational overhead.
+
+- **Methodological Expansion**: Explore and implement additional methodologies within the workflow to enhance the accuracy and scope of SV detection and annotation.
+
+**Conclusion:**
+
+The development of this pipeline represents a significant advancement in the annotation of structural variants (SVs). By combining gnomAD allele frequencies and ClinVar clinical data, our tool facilitates a more straightforward and efficient approach to detecting and analyzing SVs in patient sequences. The integration of phenotypic information with clinical and larger dataset sources enhances the tool's utility in patient care, leading to more informed predictions and better clinical decision-making. The streamlined design and future expansions aim to set a new standard for bioinformatics workflows in precision medicine.
 
