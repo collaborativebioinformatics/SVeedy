@@ -1,32 +1,34 @@
 library(dplyr)      ## v1.1.4
 library(tidyr)      ## v1.3.1
 library(argparse)   ## v2.2.3
-
+library(ggplot2) 
 
 parser <- ArgumentParser()
 parser$add_argument("-t", "--tsv", action = "append",
-                    help="OpenCRAVAT report tsv file", required = TRUE)
+                    help="OpenCRAVAT report tsv file, can be used multiple times", required = TRUE)
 args <- parser$parse_args()
 
 
 ##### Read in the OpenCRAVAT tsv report and skip the header lines #####
 # store it as data frames in a list
-#report <- read.delim(args$tsv, skip = 5)
-# report1 <- read.delim("adotto_chr1.tsv", skip = 5)
-# report2 <- read.delim("adotto_chr2.tsv", skip = 5)
-# report3 <- read.delim("adotto_chr3.tsv", skip = 5)
-# list <- c("adotto_chr1.tsv","adotto_chr2.tsv","adotto_chr3.tsv")
+#list <- c("adotto_chr1.tsv","adotto_chr2.tsv","adotto_chr3.tsv")
 
 # Initialize an empty list to store all of the tsv files
 data <- list()
+
+# Read in all of the tsv files and only keep the top report containing the relevant data
 for (file in args$tsv) {
   report <- read.delim(file, skip = 5)
+    comment_row <- which(apply(report, 1, function(x) any(grepl("^#", x))))[1]
+  report <- report[1:(comment_row - 1), ]
   data[[length(data) + 1]] <- report
 }
-# for (file in list) {
-#   report <- read.delim(file, skip = 5)
-#   data[[length(data) + 1]] <- report
-# }
+ # for (file in list) {
+ #   report <- read.delim(file, skip = 5)
+ #    comment_row <- which(apply(report, 1, function(x) any(grepl("^#", x))))[1]
+ #    report <- report[1:(comment_row - 1), ]
+ #   data[[length(data) + 1]] <- report
+ # }
 
 # Merge all data frames into one report
 report <- do.call(rbind, data)
@@ -35,6 +37,31 @@ report <- do.call(rbind, data)
 # Make plots on general trends of the data
 ## GET CODE FROM GROUP ##
 
+# Create the bar plot for the SV types and counts
+count_dataSV <- report %>%
+  group_by(Chrom, SVTYPE) %>%
+  summarize(Count = n(), .groups = 'drop')
+
+SVCount <- ggplot(data = count_dataSV, aes(x = Chrom, y = Count, fill = SVTYPE)) +
+  geom_bar(stat = "identity", position = "stack") +
+  xlab("Chromosome") +
+  ylab("Number of Occurrences") +
+  theme_minimal() +
+  labs(fill = "SV Type") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) 
+
+# Bar Plot for the SVs of clinical significance 
+# count_dataCS <- report %>%
+#   group_by(Chrom, Clinical.Significance) %>%
+#   summarize(Count = n(), .groups = 'drop')
+# 
+# SVClinSig <- ggplot(data = count_dataCS, aes(x = Chrom, y = Count, fill = Clinical.Significance)) +
+#   geom_bar(stat = "identity", position = "stack") +
+#   xlab("Chromosome") +
+#   ylab("Number of Occurrences") +
+#   theme_minimal() +
+#   labs(fill = "SV Type") +
+#   theme(axis.text.x = element_text(angle = 45, hjust = 1)) 
 
 ##### Identify Variants of Clinical interest in the data base ##
 
@@ -53,6 +80,8 @@ variants_per_sample <- disease_associated %>%
 
 # Open PDF device for the multi-page report
 pdf(file = "Genetic Report of Diseases caused by SVs.pdf")
+
+plot(SVCount)
 
 # Loop through each sample to add a new page to the PDF report
 for (i in 1:nrow(variants_per_sample)) {
