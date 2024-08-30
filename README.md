@@ -24,11 +24,9 @@ Larger structural variants are present among human genomes. For example, human c
 
 We gained access to a collection of VCFs created to find Tandem Repeats (TRs) (English et. al 2024)  from a collection of 86 haplotypes accumulated from Garg et. al 2020, Ebert et. al 2021, Jarvis et. al 2022, and Wang et. al 2022.
 
-Then, we converted these BCF files to VCF files:
+Then, we converted these BCF files to VCF files and filtered out SVs under 50 bp:
 
 `bcftools convert -O v -o file.vcf file.bcf.gz`
-
-# filter out SVs under 50 bp
 
 `bcftools view -i "SVLEN > 50" file.vcf -o above50bp.vcf`
 
