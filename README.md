@@ -35,7 +35,8 @@ As an example, a previous study identified 11 SV loci associated with an increas
 # Workflow
 ![SVeedy - Wed](https://github.com/user-attachments/assets/54dfa671-0fee-4056-91d5-cfdfa21c287e)
 
-![SVeedy - Thurs](https://github.com/user-attachments/assets/1a8c374a-6b2a-42e5-b3c1-886b537fe97c)
+![SVeedy - Fri](https://github.com/user-attachments/assets/68e8a3c2-73af-4aa8-9755-7bbc30abb8ee)
+
 
 # Validation
 
