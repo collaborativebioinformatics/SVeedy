@@ -38,7 +38,7 @@ By using the Truvari software, we were able to collapse the SVs:
 
 `truvari collapse -k common -i above50bp.vcf.gz -o truvari_raw.vcf -c truvari_collapsed.vcf`
 
-At this point, we could run SURVIVOR 1.0.7 ([DOI: doi:10.12688/f1000research.12516.1] (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5668921/)) for analyzing the VCF data:
+At this point, we could run SURVIVOR 1.0.7 [DOI: doi:10.12688/f1000research.12516.1](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5668921/) for analyzing the VCF data:
 
 `SURVIVOR stats file.vcf -1 -1 -1 survivor_stats`
 
