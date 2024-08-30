@@ -1,12 +1,6 @@
 # SVeedy
-# Contributors: 
-1. Jon Moller (CARD, NIA, NIH, Bethesda, Maryland)
-2. Sam Stroupe (Texas A&M University)
-3. Sarah Fross (Texas A&M University)
-4. Shaghayegh Beheshti (Baylor College of Medicine)
-5. Pankhuri Wanjari (University of Chicago- Department of Pathology)
-6. Nha Van Huynh (University of Alabama at Birmingham)
 ![image](https://github.com/user-attachments/assets/5bf7b126-30c8-48cd-8d2f-f0049b398b5e)
+
 # Structural Variant Analysis Pipeline
 
 ## Overview
@@ -35,7 +29,6 @@ One thing we need to consider is the cutoff percentage of similarity of the SVs.
 
 Then we used OpenCRAVAT (Pagal et. al 2019) to annotate the VCF file using the ClinVar and gnomAD databases and hg38 genome reference. We removed a problematic line of the VCF header (FILTER/COV) before running the input collapsed SV VCF through open-cravat.
 
-Next, the plan is to import the annotated VCF file into R using vcfR (Knaus and Grunwald 2016). Then identify the variants with a phenotype according to the annotation (should be recorded in the ‘INFO’ field of the VCF file). Once those variants are flagged we can look for individuals that have an alternate allele at that site using the ‘GT’ (genotype) field. With that information, we can put together a datatable with individuals and their associated phenotype. Then we can generate per sample reports of all phenotypes associated with their genotypes
 
 
 ## Case Study
@@ -87,3 +80,10 @@ For example, the gene **NFASC**, which is involved in neurodevelopmental disorde
 
 The development of this pipeline represents a significant advancement in the annotation of structural variants (SVs). By combining gnomAD allele frequencies and ClinVar clinical data, our tool facilitates a more straightforward and efficient approach to detecting and analyzing SVs in patient sequences. The integration of phenotypic information with clinical and larger dataset sources enhances the tool's utility in patient care, leading to more informed predictions and better clinical decision-making. The streamlined design and future expansions aim to set a new standard for bioinformatics workflows in precision medicine.
 
+# Contributors: 
+1. Jon Moller (CARD, NIA, NIH, Bethesda, Maryland)
+2. Sam Stroupe (Texas A&M University)
+3. Sarah Fross (Texas A&M University)
+4. Shaghayegh Beheshti (Baylor College of Medicine)
+5. Pankhuri Wanjari (University of Chicago- Department of Pathology)
+6. Nha Van Huynh (University of Alabama at Birmingham)
